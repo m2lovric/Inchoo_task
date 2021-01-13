@@ -5,7 +5,9 @@ body {
 }
 
 .container {
-  width: 360px;
+  width: 420px;
+  position: relative;
+  padding: 2rem 0;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,17 +37,18 @@ body {
 }
 
 .container__cart {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 360px;
+  padding: 8px 16px;
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-shadow: 3px 3px 6px 0px #aaa;
           box-shadow: 3px 3px 6px 0px #aaa;
-  padding: 8px 16px;
 }
 
 .container__cart h4 {
@@ -53,17 +56,79 @@ body {
   font-weight: 500;
 }
 
-.container__cart__btns {
+.container__cart__up, .container__cart__down {
   width: 100%;
+  height: 30px;
+  background-color: #f9f9f9;
+  border: none;
+  outline: none;
+}
+
+.container__cart__articles {
+  height: 510px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container__cart__article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 18px 0;
+  border-top: 1px solid #BCBCBC;
+}
+
+.container__cart__article img {
+  width: 95px;
+  height: 95px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 12px;
+}
+
+.container__cart__article .title, .container__cart__article .price {
+  color: #0D0D0D;
+  font-family: "Source Serif Pro", serif;
+}
+
+.container__cart__article .brand, .container__cart__article .feature {
+  color: #707070;
+  font-family: "Source Serif Pro", serif;
+}
+
+.container__cart__btns {
+  width: 100%;
+  margin-top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container__cart__btns .edit {
+  border: 1px solid #0D0D0D;
+  width: 135px;
+  height: 42px;
+  background-color: white;
+  outline: none;
 }
 
 .container__cart__btns .checkout {
   font-family: "Roboto", sans-serif;
+  width: 177px;
+  height: 42px;
   font-weight: 500;
+  background-color: #79AD36;
+  color: white;
+  border: none;
+  outline: none;
 }
 /*# sourceMappingURL=app.css.map */

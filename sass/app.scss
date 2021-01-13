@@ -1,4 +1,8 @@
-$gray: #f3f3f3;
+$gray-light: #f3f3f3;
+$gray-light-f9: #f9f9f9;
+$gray:#707070;
+$green:#79AD36;
+$black:#0D0D0D;
 
 $roboto: 'Roboto', sans-serif;
 $sourceSerif: 'Source Serif Pro', serif;
@@ -10,7 +14,9 @@ body {
 }
 
 .container {
-  width: 360px;
+  width: 420px;
+  position: relative;
+  padding: 2rem 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -20,7 +26,7 @@ body {
     align-self: flex-end;
     width: 86px;
     height: 75px;
-    background-color: $gray;
+    background-color: $gray-light;
     outline: none;
     border: none;
   
@@ -32,25 +38,82 @@ body {
   }
 
   &__cart {
-    width: 100%;
-    display: flex;
+    width: 360px;
+    padding: 8px 16px;
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    display: none;
     flex-direction: column;
     box-shadow: 3px 3px 6px 0px #aaa;
-    padding: 8px 16px;
 
     h4 {
       font-family: $roboto;
       font-weight: 500;
     }
 
+    &__up, &__down {
+      width: 100%;
+      height: 30px;
+      background-color: $gray-light-f9;
+      border: none;
+      outline: none;
+    }
+
+    &__articles {
+      height: 510px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &__article {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 18px 0;
+      border-top: 1px solid #BCBCBC;;
+
+      img {
+        width: 95px;
+        height: 95px;
+        object-fit: contain;
+        margin-right: 12px;
+      }
+
+      .title, .price {
+        color: $black;
+        font-family: $sourceSerif;
+      }
+
+      .brand, .feature {
+        color: $gray;
+        font-family: $sourceSerif;
+      }
+    }
+
     &__btns {
       width: 100%;
+      margin-top: 18px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+
+      .edit {
+        border: 1px solid $black;
+        width: 135px;
+        height: 42px;
+        background-color: white;
+        outline: none;
+      }
 
       .checkout {
         font-family: $roboto;
+        width: 177px;
+        height: 42px;
         font-weight: 500;
+        background-color: $green;
+        color: white;
+        border: none;
+        outline: none;
       }
     }
   }
